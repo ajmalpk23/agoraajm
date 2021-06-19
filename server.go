@@ -87,15 +87,15 @@ func rtcTokenHandler(w http.ResponseWriter, r *http.Request){
 					role = rtctokenbuilder.RoleAdmin
 				}
 	}
-	if (int_err != nil) {
+	// if (int_err != nil) {
 
-		if errors.As(int_err, &unmarshalErr){
-				errorResponse(w, "Bad request. Wrong type provided for field " + unmarshalErr.Value  + unmarshalErr.Field + unmarshalErr.Struct, http.StatusBadRequest)
-				} else {
-				errorResponse(w, "Bad request.", http.StatusBadRequest)
-			}
-		return
-	}
+	// 	if errors.As(int_err, &unmarshalErr){
+	// 			errorResponse(w, "Bad request. Wrong type provided for field " + unmarshalErr.Value  + unmarshalErr.Field + unmarshalErr.Struct, http.StatusBadRequest)
+	// 			} else {
+	// 			errorResponse(w, "Bad request.", http.StatusBadRequest)
+	// 		}
+	// 	return
+	// }
 
 	generateRtcToken(int_uid, channel_name, role)
 	errorResponse(w, rtc_token, http.StatusOK)
