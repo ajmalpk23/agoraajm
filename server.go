@@ -9,6 +9,7 @@ import (
 	"encoding/json"
 	// "errors"
 	"strconv"
+	"os"
 )
 
 type rtc_int_token_struct struct{
@@ -126,10 +127,11 @@ func main(){
 
 	port := os.Getenv("PORT") 
 	log.Printf("listing on : " +port)
+	// fmt.Printf("Starting server at port\n"+PORT )
 	log.Fatal(http.ListenAndServe(":"+port,nil))
 	
 
-	// if err := http.ListenAndServe(":"+port, nil); err != nil {
+	// if err := http.ListenAndServe(":8002", nil); err != nil {
 	// 	log.Fatal(err)
 	// }
 }
