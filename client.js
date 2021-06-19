@@ -17,7 +17,7 @@ var options = {
 function fetchToken(uid, channelName, tokenRole) {
 
     return new Promise(function (resolve) {
-        axios.post('http://192.168.43.46:8002/fetch_rtc_token', {
+        axios.post('https://agoralogajm.herokuapp.com/fetch_rtc_token', {
             uid: uid,
             channelName: 'pk',
             role: tokenRole
