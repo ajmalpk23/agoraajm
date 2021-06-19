@@ -68,7 +68,7 @@ func rtcTokenHandler(w http.ResponseWriter, r *http.Request){
 
 
 	var t_int rtc_int_token_struct
-	var unmarshalErr *json.UnmarshalTypeError
+	// var unmarshalErr *json.UnmarshalTypeError
 	int_decoder := json.NewDecoder(r.Body)
 	int_err := int_decoder.Decode(&t_int)
 	if (int_err == nil) {
